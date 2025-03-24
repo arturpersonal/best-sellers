@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Seller</title>
+  <link href="styles/tailwind.css" rel="stylesheet">
+  <link href="styles/base.css" rel="stylesheet">
+  <script src="scripts/slider.js" defer></script>
+</head>
+<body>
+  <section class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-source-serif font-bold mb-8 text-center md:text-left">Best Sellers</h2>
+    <custom-slider>
+      <div class="carousel__wrapper">
+        <div class="carousel__content md:pb-12 gap-6 grid md:flex md:overflow-x-auto grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4">
+          <% products.forEach(function(product) { %>
+            <a href="<%= product.url %>" class="product-card snap-start shrink-0 w-full md:w-[calc(21%-12px)]">
+              <div class="block rounded-[10px] overflow-hidden select-none aspect-square relative group">
+                <img lazyload src="<%= product.image1 %>" class="select-none h-full w-full object-cover object-top-center transition-opacity duration-500 ease-in-out group-hover:opacity-0">
+                <img lazyload src="<%= product.image2 %>" class="select-none h-full w-full object-cover object-top-center absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                <div class="absolute top-0 left-0 w-full h-full p-2 flex justify-between items-start">
+                  <span class="rounded-xl text-[8px] md:text-[10px] bg-white p-1 border uppercase"><%= product.badge %></span>
+                  <span class="md:mr-2 block rounded-xl text-[8px] md:text-[10px] bg-[#5C7962] text-white p-1 border border-black uppercase">Save <%= product.discount %>%</span>
+                </div>
+              </div>
+              <div class="mt-4">
+                <h3 class="text-base font-babes-neue uppercase md:text-lg font-normal"><%= product.title %></h3>
+                <div class="flex items-center mt-2">
+                  <div class="flex">
+                    <% for(let i = 0; i < product.rating; i++) { %>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="#000" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <path d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73-1.64 7.03L12 17.27z" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    <% } %>
+                  </div>
+                  <span class="ml-2 text-xs text-[#707070]">(<%= product.reviews %> reviews)</span>
+                </div>
+                <p class="text-sm font-poppins md:text-base mt-2"><%= product.price %></p>
+              </div>
+            </a>
+          <% }); %>
+        </div>
+        <button id="showAllBtn" class="mt-3 block md:hidden font-semibold text-base bg-black text-white rounded-full w-full p-4">Show More</button>
+      </div>
+    </custom-slider>
+  </section>
+</body>
+</html>
