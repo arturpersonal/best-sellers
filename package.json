@@ -1,0 +1,28 @@
+{
+  "name": "best-seller-tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tw": "npx @tailwindcss/cli -i ./tailwind.css -o ./public/styles/tailwind.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturpersonal/best-sellers.git"
+  },
+  "author": "Artur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arturpersonal/best-sellers/issues"
+  },
+  "homepage": "https://github.com/arturpersonal/best-sellers#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.15",
+    "tailwindcss": "^4.0.15"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
