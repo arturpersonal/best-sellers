@@ -2,10 +2,9 @@
   "name": "best-seller-tailwind",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "tw": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./dist/tailwind.css --watch",
+    "tw": "npx @tailwindcss/cli -i ./tailwind.css -o ./public/styles/tailwind.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +20,9 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.15",
     "tailwindcss": "^4.0.15"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
   }
 }
